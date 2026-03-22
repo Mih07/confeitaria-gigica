@@ -1,0 +1,186 @@
+:root {
+  --rosa: #fb6f92;
+  --baunilha: #fffaf0;
+  --marrom-claro: #9B7166; /* Marrom suave para descrições */
+  --marrom: #5D3A3A;   /* Marrom Chocolate Intenso para textos e títulos */
+  --fundo-moldura: #EAE0DA; /* Cor para as laterais do monitor */
+  --fundo-pagina: #EAE0DA; /* Um marrom-creme para o fundo das laterais */
+}
+
+body {
+  background-color: var(--fundo-moldura) !important; /* O !important força a cor */
+  color: var(--marrom);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  min-height: 100vh; /* Garante que o fundo cubra a tela toda */
+}
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--baunilha);
+  min-height: 100vh;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.container-cardapio {
+  background-color: var(--fundo-pagina); /* Fundo claro e limpo */
+}
+
+.header-dinamico {
+  background: var(--rosa);
+  color: white;
+  padding: 45px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 0 0 20px 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.logo-header {
+  width: 60px; /* Tamanho da logo no topo */
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.btn-categoria.ativo {
+  background-color: var(--marrom);
+  color: white;
+  border-color: var(--marrom);
+}
+
+/* Garante que o container de botões de preços não quebre o layout */
+.botoes-precos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.botoes-precos button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--rosa);
+  background: white;
+  color: var(--rosa);
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.header-content h1 { font-family: 'Pacifico', cursive; margin: 0; font-size: 2rem; }
+
+.config-massas { display: flex; gap: 10px; padding: 15px; background: #fff1f4; }
+.massa-box h4 { margin: 0 0 5px; font-size: 0.8rem; }
+.massa-box select { width: 100%; border-radius: 8px; border: 1px solid var(--rosa); padding: 5px; }
+
+/* 2. Menu de Categorias Deslizante */
+.categorias-nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 15px;
+  background: white;
+  position: sticky;
+  top: 110px; /* Gruda abaixo do header */
+  z-index: 90;
+  border-bottom: 2px solid #f9ebed;
+  scrollbar-width: none;
+}
+.categorias-nav::-webkit-scrollbar { display: none; }
+
+.btn-categoria {
+  background: #fff;
+  color: var(--marrom);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1.5px solid var(--rosa);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.grupo-categoria { 
+  padding: 20px 15px; 
+  scroll-margin-top: 170px;
+}
+
+.grupo-categoria h2 { 
+  font-family: 'Pacifico', cursive; 
+  color: var(--marrom); 
+  margin-bottom: 10px; 
+  border-left: 5px solid var(--rosa); 
+  padding-left: 10px; 
+}
+
+.img-categoria-demonstracao {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card-produto-compacto {
+  background: white;
+  border: 3px solid#f2e1d5;
+  padding: 15px;
+  border-radius: 18px;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.info-texto h3 { margin: 0; font-size: 1rem; color: var(--rosa); }
+.info-texto p { margin: 4px 0 10px; font-size: 0.8rem; color: #888; }
+
+/* Container dos botões de valor */
+.botoes-precos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que eles fiquem um ao lado do outro */
+  gap: 6px;       /* Espaço pequeno entre eles */
+  margin-top: 8px;
+}
+
+.botoes-precos button {
+  flex: 0 1 auto;      /* O botão só ocupa o espaço do texto dentro dele */
+  min-width: auto;     /* Remove a largura mínima grande */
+  background: white;
+  border: 1.5px solid var(--rosa);
+  color: var(--rosa);
+  padding: 5px;   /* Reduz o enchimento interno */
+  border-radius: 20px; /* Cantos mais arredondados e delicados */
+  font-size: 0.75rem;  /* Fonte menor para ficar discreto */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Impede que o texto quebre linha dentro do botão */
+}
+
+.botoes-precos button:hover {
+  background: var(--rosa);
+  color: white;
+  transform: scale(1.05); /* Leve efeito de zoom ao passar o mouse */
+}
+
+/* Ajuste específico para quando o produto tem descrição */
+.info-texto p {
+  margin: 2px 0 5px;
+  font-size: 0.78rem;
+  line-height: 1.1;
+  color: #997a7a; /* Um marrom acinzentado mais suave */
+}
+/* Modal e Carrinho */
+.modal-carrinho { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 15px; }
+.revisao-pedido { background: white; width: 100%; border-radius: 20px; padding: 20px; max-height: 80vh; overflow-y: auto; }
+.item-carrinho-linha { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee; font-size: 0.85rem; }
+.dados-entrega { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; }
+.dados-entrega input, .dados-entrega select { padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
+.btn-pedido { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; font-weight: bold; margin-top: 15px; cursor: pointer; }
