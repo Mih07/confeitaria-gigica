@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logoChocolate from '/' 
+import logoChocolate from '/logo.png' 
 import './App.css'
 import { Analytics } from "@vercel/analytics/react";
 
