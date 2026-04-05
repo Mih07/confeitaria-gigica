@@ -29,7 +29,7 @@ function App() {
     "Docinho Gourmet": "/doce-gourmet.png",
     "Cupcake": "/capcake.jpeg",
     "Sobremesas": "/bombom-uva.png"
-  };
+  };s
 
   const produtos = [
     { id: 101,  nome: "Bolo Ninho com Morango", precos: {"1Kg":100.00, "2Kg":200.00, "3Kg":300.00}, categoria: "Bolo", desc: "Bolo ninho com morango." },
@@ -177,7 +177,7 @@ function App() {
             </section>
           )
         ))}
-      </main>
+      </main>     
 
       {carrinhoAberto && (
         <div className="modal-carrinho">
