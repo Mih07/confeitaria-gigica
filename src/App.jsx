@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import logoChocolate from '/logo.png' 
 import './App.css'
-import { Analytics } from "@vercel/analytics/react";
-
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   const [carrinho, setCarrinho] = useState([]); 
