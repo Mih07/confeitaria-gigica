@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import logoChocolate from '/' 
+import logoChocolate from '/vite.svg' 
 import './App.css'
 import { Analytics } from "@vercel/analytics/react";
 
@@ -29,7 +29,7 @@ function App() {
     "Docinho Gourmet": "/doce-gourmet.png",
     "Cupcake": "/capcake.jpeg",
     "Sobremesas": "/bombom-uva.png"
-  };s
+  };
 
   const produtos = [
     { id: 101,  nome: "Bolo Ninho com Morango", precos: {"1Kg":100.00, "2Kg":200.00, "3Kg":300.00}, categoria: "Bolo", desc: "Bolo ninho com morango." },
@@ -74,7 +74,7 @@ function App() {
     if (produto.categoria === "Bolo") nomeFinal += ` | Massa: ${cliente.massaBolo}`;
     if (produto.categoria === "Cupcake") nomeFinal += ` | Massa: ${cliente.massaCupcake}`;
 
-    const novoItem = { id_unico: Date.now(), nome: nomeFinal, preco: precoFinal };
+    const novoItem = { id_unico: crypto.randomUUID(), nome: nomeFinal, preco: precoFinal };
     setCarrinho([...carrinho, novoItem]);
   };
 
