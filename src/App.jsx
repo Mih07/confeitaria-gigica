@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import logoChocolate from '/bolo2kg.png' 
 import './App.css'
+import { Analytics } from "@vercel/analytics/react";
+
 
 function App() {
   const [carrinho, setCarrinho] = useState([]); 
@@ -14,10 +16,10 @@ function App() {
     massaBolo: 'Pão de ló Baunilha', 
     massaCupcake: 'Chocolate' 
   });
-  
+                                                              3
   const restaurante = { 
-    nome: "Confeitaria da Gigica", 
-    fone: "5511997422191",
+    nome: "Confeitaria Sabores", 
+    fone: "5511971128269",
     cor: "#fb6f92" 
   };
 
@@ -106,6 +108,8 @@ function App() {
 
   return (
     <div className="container">
+    <Analytics/>
+    
       <header className="header-dinamico">
         <div className="header-content">
           <img src={logoChocolate} alt="Logo" className="logo-header" />
