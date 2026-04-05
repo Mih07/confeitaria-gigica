@@ -109,7 +109,7 @@ function App() {
   return (
     <div className="container">
     <Analytics/>
-    
+      
       <header className="header-dinamico">
         <div className="header-content">
           <img src={logoChocolate} alt="Logo" className="logo-header" />
